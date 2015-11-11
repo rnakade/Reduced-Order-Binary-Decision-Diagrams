@@ -1,0 +1,21 @@
+Build Instructions
+------------------------------------------------------------------------
+* Edit the makefile to configure for your machine.
+
+  NOTE FOR TESTING WITH CUDD:
+
+  1) Download and build the CUDD libraries (make clean; make; make testobj).
+  2) Create a lib directory in the CUDD source directory.
+  3) Create symbolic links in the lib directory for the following libraries:
+
+     > ln -s ../obj/libobj.a
+     > ln -s ../cudd/libcudd.a
+     > ln -s ../mtr/libmtr.a
+     > ln -s ../util/libutil.a
+     > ln -s ../st/libst.a
+     > ln -s ../epd/libepd.a
+
+  4) Set the USE_CUDD variable to 1 in the Makefile
+  5) Set the CUDD variable to the source tree for your installation for CUDD
+
+* Run make.  The default target is bdd-test.
